@@ -8,16 +8,19 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;1,500&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <!-- ==================== CSS STARTS HERE ==================== -->
     <style>
+        /* ---------- RESET ---------- */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
+        /* ---------- COLOR VARIABLES ---------- */
         :root {
             --black: #0d0b10;
-            --black-soft: #15111a;
             --burgundy: #6b1e33;
             --burgundy-light: #a0334f;
             --blue: #2c4b8a;
@@ -27,6 +30,7 @@
             --line: rgba(255, 255, 255, 0.09);
         }
 
+        /* ---------- BODY ---------- */
         body {
             background:
                 radial-gradient(circle at 15% 10%, rgba(107, 30, 51, 0.35), transparent 45%),
@@ -42,6 +46,7 @@
             line-height: 1.6;
         }
 
+        /* ---------- CARD ---------- */
         .card {
             max-width: 720px;
             width: 100%;
@@ -57,7 +62,6 @@
             overflow: hidden;
         }
 
-        /* soft glow accents */
         .card::before {
             content: '';
             position: absolute;
@@ -82,7 +86,7 @@
             pointer-events: none;
         }
 
-        /* ---------- intro text ---------- */
+        /* ---------- INTRO ---------- */
         .intro {
             position: relative;
             z-index: 1;
@@ -132,7 +136,7 @@
             font-weight: 500;
         }
 
-        /* divider */
+        /* ---------- DIVIDER ---------- */
         .divider {
             height: 1px;
             background: linear-gradient(90deg, var(--burgundy-light), var(--blue-light), transparent);
@@ -143,7 +147,7 @@
             opacity: 0.7;
         }
 
-        /* ---------- hobbies ---------- */
+        /* ---------- HOBBIES ---------- */
         .hobbies {
             position: relative;
             z-index: 1;
@@ -219,7 +223,7 @@
             color: var(--text);
         }
 
-        /* ---------- footer ---------- */
+        /* ---------- FOOTER ---------- */
         footer {
             position: relative;
             z-index: 1;
@@ -233,7 +237,7 @@
             text-align: center;
         }
 
-        /* ---------- mobile ---------- */
+        /* ---------- MOBILE ---------- */
         @media (max-width: 620px) {
             .card {
                 padding: 38px 26px 32px;
@@ -257,6 +261,8 @@
             }
         }
     </style>
+    <!-- ==================== CSS ENDS HERE ==================== -->
+
 </head>
 <body>
 
@@ -298,7 +304,7 @@
 
                 <div class="hobby">
                     <div class="hobby-icon">📚</div>
-                    <div class="hobby-label">Thriller &amp; Fiction Books</div>
+                    <div class="hobby-label">Thriller &amp; Fiction</div>
                 </div>
 
             </div>
@@ -312,5 +318,3 @@
 
 </body>
 </html>
-
-               
