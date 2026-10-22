@@ -4,383 +4,313 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tsion Simachew · biography</title>
-    <!-- Google Font for clean typography -->
+    <title>Tsion Simachew</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;1,500&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
     <style>
-        /* reset & base */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
+        :root {
+            --black: #0d0b10;
+            --black-soft: #15111a;
+            --burgundy: #6b1e33;
+            --burgundy-light: #a0334f;
+            --blue: #2c4b8a;
+            --blue-light: #4b6fb8;
+            --text: #ece7f0;
+            --text-dim: #a79fb2;
+            --line: rgba(255, 255, 255, 0.09);
+        }
+
         body {
-            background: linear-gradient(145deg, #f9f3f0 0%, #fff4ea 100%);
-            font-family: 'Quicksand', sans-serif;
+            background:
+                radial-gradient(circle at 15% 10%, rgba(107, 30, 51, 0.35), transparent 45%),
+                radial-gradient(circle at 85% 90%, rgba(44, 75, 138, 0.35), transparent 50%),
+                var(--black);
+            font-family: 'Poppins', sans-serif;
+            color: var(--text);
+            min-height: 100vh;
             display: flex;
             justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            padding: 1.5rem;
-            line-height: 1.5;
-            color: #2d2b2b;
+            align-items: flex-start;
+            padding: 50px 20px;
+            line-height: 1.6;
         }
 
-        /* main card – soft, friendly, with subtle shadow */
-        .bio-card {
-            max-width: 850px;
+        .card {
+            max-width: 720px;
             width: 100%;
-            background-color: #fffffffa;
-            backdrop-filter: blur(2px);
-            border-radius: 2.5rem;
-            padding: 2.5rem 2.8rem;
-            box-shadow: 0 30px 45px -20px rgba(90, 60, 40, 0.25),
-                        0 10px 25px -10px rgba(0, 0, 0, 0.05),
-                        inset 0 1px 4px rgba(255, 255, 255, 0.8);
-            border: 1px solid #ffede0;
-            transition: transform 0.2s ease;
+            background: linear-gradient(160deg, #16121c 0%, #0f0c13 100%);
+            border-radius: 24px;
+            padding: 55px 50px 45px;
+            border: 1px solid var(--line);
+            box-shadow:
+                0 40px 80px -30px rgba(0, 0, 0, 0.9),
+                0 0 0 1px rgba(160, 51, 79, 0.08),
+                inset 0 1px 0 rgba(255, 255, 255, 0.04);
+            position: relative;
+            overflow: hidden;
         }
 
-        .bio-card:hover {
-            transform: scale(1.005);
+        /* soft glow accents */
+        .card::before {
+            content: '';
+            position: absolute;
+            top: -80px;
+            right: -80px;
+            width: 260px;
+            height: 260px;
+            background: radial-gradient(circle, rgba(160, 51, 79, 0.25), transparent 70%);
+            border-radius: 50%;
+            pointer-events: none;
         }
 
-        /* header area: name + grade */
-        .header {
-            display: flex;
-            flex-wrap: wrap;
-            align-items: baseline;
-            justify-content: space-between;
-            margin-bottom: 1.2rem;
-            border-bottom: 3px dashed #d9c7bb;
-            padding-bottom: 1.2rem;
+        .card::after {
+            content: '';
+            position: absolute;
+            bottom: -100px;
+            left: -60px;
+            width: 280px;
+            height: 280px;
+            background: radial-gradient(circle, rgba(75, 111, 184, 0.2), transparent 70%);
+            border-radius: 50%;
+            pointer-events: none;
+        }
+
+        /* ---------- intro text ---------- */
+        .intro {
+            position: relative;
+            z-index: 1;
+        }
+
+        .eyebrow {
+            font-size: 12px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--burgundy-light);
+            font-weight: 500;
+            margin-bottom: 14px;
         }
 
         .name {
-            font-size: 3rem;
-            font-weight: 700;
-            letter-spacing: -0.02em;
-            color: #3e2e28;
-            line-height: 1.1;
-            text-shadow: 2px 2px 0 rgba(255, 215, 190, 0.4);
-        }
-
-        .grade {
-            font-size: 1.3rem;
+            font-family: 'Playfair Display', serif;
+            font-size: 52px;
             font-weight: 600;
-            background: #f3e3d8;
-            padding: 0.5rem 1.3rem;
-            border-radius: 60px;
-            color: #54423b;
-            box-shadow: 0 4px 8px rgba(150, 110, 80, 0.1);
-            white-space: nowrap;
-            margin-top: 0.3rem;
+            line-height: 1.1;
+            letter-spacing: -1px;
+            background: linear-gradient(100deg, #ffffff 0%, #d9c8e6 55%, #8fa9d9 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 22px;
         }
 
-        /* location & origin */
-        .origin {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            margin-bottom: 2rem;
-            font-size: 1.15rem;
+        .intro p {
+            font-size: 17px;
+            font-weight: 300;
+            color: var(--text-dim);
+            max-width: 540px;
+        }
+
+        .intro p b {
             font-weight: 500;
-            color: #6f5546;
-            background: #fef9f5;
-            padding: 0.65rem 1.2rem;
-            border-radius: 3rem;
-            width: fit-content;
-            border: 1px solid #f0dfd3;
+            color: var(--text);
         }
 
-        .origin span {
-            font-size: 1.4rem;
-            line-height: 1;
+        .intro .highlight-burgundy {
+            color: var(--burgundy-light);
+            font-weight: 500;
         }
 
-        /* section titles */
-        .section-title {
-            font-size: 1.2rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.12em;
-            color: #b08b79;
-            margin-bottom: 1rem;
+        .intro .highlight-blue {
+            color: var(--blue-light);
+            font-weight: 500;
+        }
+
+        /* divider */
+        .divider {
+            height: 1px;
+            background: linear-gradient(90deg, var(--burgundy-light), var(--blue-light), transparent);
+            margin: 40px 0 38px;
+            border-radius: 1px;
+            position: relative;
+            z-index: 1;
+            opacity: 0.7;
+        }
+
+        /* ---------- hobbies ---------- */
+        .hobbies {
+            position: relative;
+            z-index: 1;
+        }
+
+        .hobbies h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 24px;
+            font-weight: 600;
+            margin-bottom: 24px;
             display: flex;
             align-items: center;
-            gap: 0.75rem;
+            gap: 14px;
         }
 
-        .section-title::after {
+        .hobbies h2::after {
             content: '';
             flex: 1;
-            height: 2px;
-            background: linear-gradient(90deg, #edd9cd, transparent);
-            border-radius: 2px;
+            height: 1px;
+            background: var(--line);
         }
 
-        /* favourites & hobbies – grid style */
-        .two-col {
+        .hobby-grid {
             display: grid;
-            grid-template-columns: 1fr 1.5fr;
-            gap: 2rem;
-            margin-bottom: 2rem;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 16px;
         }
 
-        /* animal + curiosity card style */
-        .favourite-animal {
-            background: #fdf3ec;
-            border-radius: 1.8rem;
-            padding: 1.5rem 1.4rem;
+        .hobby {
+            background: linear-gradient(150deg, rgba(255, 255, 255, 0.045), rgba(255, 255, 255, 0.01));
+            border: 1px solid var(--line);
+            border-radius: 18px;
+            padding: 24px 14px 20px;
             display: flex;
             flex-direction: column;
-            gap: 0.75rem;
-            border: 1px solid #f1dfd2;
-            box-shadow: 0 5px 12px rgba(170, 130, 100, 0.08);
-        }
-
-        .animal-label {
-            font-weight: 700;
-            color: #8f6e5c;
-            font-size: 1rem;
-            letter-spacing: 0.02em;
-            display: flex;
             align-items: center;
-            gap: 0.4rem;
+            gap: 12px;
+            text-align: center;
+            transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+            cursor: default;
         }
 
-        .animal-label span {
-            font-size: 1.6rem;
+        .hobby:hover {
+            transform: translateY(-6px);
+            border-color: rgba(160, 51, 79, 0.5);
+            box-shadow: 0 18px 30px -18px rgba(160, 51, 79, 0.6);
         }
 
-        .animal-name {
-            font-size: 2.2rem;
-            font-weight: 700;
-            color: #3d2c25;
-            line-height: 1.2;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
+        .hobby:nth-child(even):hover {
+            border-color: rgba(75, 111, 184, 0.5);
+            box-shadow: 0 18px 30px -18px rgba(75, 111, 184, 0.6);
         }
 
-        .animal-name .emoji-big {
-            font-size: 2.6rem;
+        .hobby-icon {
+            font-size: 40px;
             line-height: 1;
+            filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.5));
+            transition: transform 0.25s ease;
         }
 
-        /* curiosity block (cyber security) */
-        .curiosity-block {
-            display: flex;
-            flex-direction: column;
-            gap: 0.75rem;
+        .hobby:hover .hobby-icon {
+            transform: scale(1.15);
         }
 
-        .curiosity-label {
-            font-weight: 700;
-            color: #8f6e5c;
-            font-size: 1rem;
-            letter-spacing: 0.02em;
-            display: flex;
-            align-items: center;
-            gap: 0.4rem;
-        }
-
-        .curiosity-label span {
-            font-size: 1.6rem;
-        }
-
-        .cyber-badge {
-            background: #e7ddd4;
-            padding: 0.9rem 1.2rem;
-            border-radius: 1.5rem;
-            font-weight: 600;
-            font-size: 1.2rem;
-            color: #352c27;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.6rem;
-            border: 1px dashed #cbb4a4;
-            box-shadow: 0 2px 6px rgba(120, 80, 60, 0.05);
-            align-self: flex-start;
-        }
-
-        .cyber-badge .emoji {
-            font-size: 1.7rem;
-        }
-
-        /* hobbies full width */
-        .hobbies-section {
-            margin-bottom: 2rem;
-        }
-
-        .hobby-list {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 1rem;
-            margin-top: 1rem;
-        }
-
-        .hobby-item {
-            background: #ffffff;
-            padding: 0.9rem 1.6rem;
-            border-radius: 4rem;
-            font-weight: 600;
-            font-size: 1.1rem;
-            color: #4e3d33;
-            box-shadow: 0 6px 14px rgba(140, 100, 70, 0.08);
-            border: 1px solid #edd9cd;
-            display: flex;
-            align-items: center;
-            gap: 0.7rem;
-            transition: all 0.15s;
-        }
-
-        .hobby-item:hover {
-            background: #fff4ea;
-            border-color: #dbbdab;
-            transform: translateY(-2px);
-            box-shadow: 0 12px 20px -8px rgba(160, 120, 90, 0.2);
-        }
-
-        .hobby-emoji {
-            font-size: 1.5rem;
-            line-height: 1;
-        }
-
-        /* extra detail / fun fact (optional but adds warmth) */
-        .fun-note {
-            margin-top: 1.2rem;
-            padding-top: 1.5rem;
-            border-top: 2px dotted #e2cfc2;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            font-size: 1rem;
-            color: #927b6b;
+        .hobby-label {
+            font-size: 13px;
             font-weight: 500;
+            letter-spacing: 0.4px;
+            color: var(--text-dim);
         }
 
-        .fun-note .cat-foot {
-            font-size: 1.8rem;
-            opacity: 0.8;
+        .hobby:hover .hobby-label {
+            color: var(--text);
         }
 
-        /* responsive */
-        @media (max-width: 650px) {
-            .bio-card {
-                padding: 1.8rem;
-                border-radius: 2rem;
+        /* ---------- footer ---------- */
+        footer {
+            position: relative;
+            z-index: 1;
+            margin-top: 44px;
+            padding-top: 20px;
+            border-top: 1px solid var(--line);
+            font-size: 12px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: #5f5768;
+            text-align: center;
+        }
+
+        /* ---------- mobile ---------- */
+        @media (max-width: 620px) {
+            .card {
+                padding: 38px 26px 32px;
+                border-radius: 20px;
             }
             .name {
-                font-size: 2.2rem;
+                font-size: 38px;
             }
-            .grade {
-                font-size: 1rem;
-                padding: 0.4rem 1rem;
+            .intro p {
+                font-size: 15.5px;
             }
-            .two-col {
-                grid-template-columns: 1fr;
-                gap: 1.2rem;
+            .hobby-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 14px;
             }
-            .header {
-                flex-direction: column;
-                align-items: flex-start;
-                gap: 0.8rem;
+            .hobby {
+                padding: 20px 12px 16px;
             }
-            .hobby-item {
-                padding: 0.7rem 1.2rem;
-                font-size: 1rem;
-            }
-            .fun-note {
-                flex-direction: column;
-                gap: 0.5rem;
-                align-items: flex-start;
-            }
-        }
-
-        @media (max-width: 400px) {
-            body {
-                padding: 0.8rem;
-            }
-            .bio-card {
-                padding: 1.2rem;
-            }
-            .name {
-                font-size: 1.8rem;
-            }
-            .animal-name {
-                font-size: 1.7rem;
+            .hobby-icon {
+                font-size: 34px;
             }
         }
     </style>
 </head>
 <body>
-    <div class="bio-card">
-        <!-- header: name + grade -->
-        <div class="header">
-            <div class="name">Tsion Simachew</div>
-            <div class="grade">🌱 Grade 9</div>
+
+    <div class="card">
+
+        <!-- intro text: all the basic info -->
+        <div class="intro">
+            <p class="eyebrow">Personal Biography</p>
+            <h1 class="name">Tsion Simachew</h1>
+            <p>
+                <b>Grade 9</b> student, <span class="highlight-burgundy">born and raised in Bahirdar</span>, Ethiopia.
+                A curious mind with a soft spot for <b>cats 🐱</b> and a growing fascination with
+                <span class="highlight-blue">cyber security 🔐</span>.
+                Always creating, always wondering how things work.
+            </p>
         </div>
 
-        <!-- born & raised -->
-        <div class="origin">
-            <span>📍</span> Born & raised in Bahirdar, Ethiopia
-        </div>
+        <div class="divider"></div>
 
-        <!-- two column area: favourite animal + curiosity (cyber) -->
-        <div class="two-col">
-            <!-- cat favourite -->
-            <div class="favourite-animal">
-                <div class="animal-label">
-                    <span>❤️</span> Favourite animal
-                </div>
-                <div class="animal-name">
-                    <span class="emoji-big">🐱</span> Cats
-                </div>
-                <div style="font-size: 0.95rem; color:#7a5e4d; margin-top: 0.2rem;">
-                    fluffy, curious, independent
-                </div>
-            </div>
-            <!-- cyber security curiosity -->
-            <div class="curiosity-block">
-                <div class="curiosity-label">
-                    <span>🔎</span> Curious about
-                </div>
-                <div class="cyber-badge">
-                    <span class="emoji">🛡️</span> Cyber Security
-                </div>
-                <div style="font-size: 0.95rem; color:#7a5e4d; margin-top: 0.1rem;">
-                    always exploring how things work
-                </div>
-            </div>
-        </div>
+        <!-- hobbies: icon grid -->
+        <section class="hobbies">
+            <h2>Hobbies</h2>
+            <div class="hobby-grid">
 
-        <!-- hobbies section -->
-        <div class="hobbies-section">
-            <div class="section-title">
-                <span>✨</span> Hobbies & passions
-            </div>
-            <div class="hobby-list">
-                <div class="hobby-item">
-                    <span class="hobby-emoji">🎨</span> Drawing
+                <div class="hobby">
+                    <div class="hobby-icon">🎨</div>
+                    <div class="hobby-label">Drawing</div>
                 </div>
-                <div class="hobby-item">
-                    <span class="hobby-emoji">✂️</span> Crafts (any kind)
-                </div>
-                <div class="hobby-item">
-                    <span class="hobby-emoji">🎬</span> Watching movies
-                </div>
-            </div>
-        </div>
 
-        <!-- fun touch / extra personality -->
-        <div class="fun-note">
-            <div>🐾 curious mind · creative hands · future cyber explorer</div>
-            <div class="cat-foot">🐈</div>
-        </div>
+                <div class="hobby">
+                    <div class="hobby-icon">✂️</div>
+                    <div class="hobby-label">Crafts</div>
+                </div>
+
+                <div class="hobby">
+                    <div class="hobby-icon">🎬</div>
+                    <div class="hobby-label">Movies</div>
+                </div>
+
+                <div class="hobby">
+                    <div class="hobby-icon">📚</div>
+                    <div class="hobby-label">Thriller &amp; Fiction Books</div>
+                </div>
+
+            </div>
+        </section>
+
+        <footer>
+            crafted by Tsion · 2025
+        </footer>
+
     </div>
+
 </body>
 </html>
+
+               
