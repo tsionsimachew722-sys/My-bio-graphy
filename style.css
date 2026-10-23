@@ -9,24 +9,23 @@
       background: linear-gradient(145deg, #f9f2e7 0%, #f0e6d9 100%);
       font-family: 'Segoe UI', 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
       min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 1.5rem;
+      padding: 0;
       line-height: 1.5;
       color: #2a241f;
     }
 
     .bio-card {
-      max-width: 800px;
       width: 100%;
+      min-height;100vh;
       background: #fffcf8;
-      border-radius: 3rem 1.8rem 3rem 1.8rem;
-      box-shadow: 0 20px 35px -12px rgba(80, 60, 40, 0.25),
-                  0 6px 14px -6px rgba(60, 40, 20, 0.15),
-                  inset 0 1px 0 rgba(255, 255, 240, 0.8);
-      padding: 2.5rem 2.2rem;
-      border: 1px solid #f0e3d2;
+      border-radius: 0;
+      box-shadow: none;
+      padding: 3rem  4rem;
+      border: none;
+      display:flex;
+       flex-dirction:cloumn;
+       justify-content: center;
+       
     }
 
     h1 {
