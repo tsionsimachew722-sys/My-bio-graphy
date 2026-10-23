@@ -2,70 +2,282 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tsion Simachew</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;1,500&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tsion Simachew · Biography</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-     <link rel="stylesheet" href="style.css">
-    <!-- ==================== CSS STARTS HERE ==================== -->
-   
-    <!-- ==================== CSS ENDS HERE ==================== -->
+    body {
+      background: linear-gradient(145deg, #f9f2e7 0%, #f0e6d9 100%);
+      font-family: 'Segoe UI', 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1.5rem;
+      line-height: 1.5;
+      color: #2a241f;
+    }
 
+    .bio-card {
+      max-width: 800px;
+      width: 100%;
+      background: #fffcf8;
+      border-radius: 3rem 1.8rem 3rem 1.8rem;
+      box-shadow: 0 20px 35px -12px rgba(80, 60, 40, 0.25),
+                  0 6px 14px -6px rgba(60, 40, 20, 0.15),
+                  inset 0 1px 0 rgba(255, 255, 240, 0.8);
+      padding: 2.5rem 2.2rem;
+      border: 1px solid #f0e3d2;
+    }
+
+    h1 {
+      font-size: 2.8rem;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      line-height: 1.2;
+      color: #4d3a2b;
+      border-left: 8px solid #d9b38c;
+      padding-left: 1.3rem;
+      margin-bottom: 0.4rem;
+      word-break: break-word;
+    }
+
+    .subtitle {
+      font-size: 1.3rem;
+      font-weight: 400;
+      color: #9a7b60;
+      padding-left: 2.1rem;
+      margin-bottom: 2rem;
+      letter-spacing: 1px;
+      text-transform: lowercase;
+    }
+
+    .bio-text {
+      background: #faf3ea;
+      padding: 1.6rem 1.8rem;
+      border-radius: 2rem 1rem 2rem 1rem;
+      margin-bottom: 2.2rem;
+      font-size: 1.1rem;
+      color: #3f3227;
+      border: 1px solid #ecddce;
+      box-shadow: inset 0 1px 6px rgba(190, 160, 130, 0.08);
+    }
+
+    .bio-text p {
+      margin-bottom: 0.7rem;
+    }
+
+    .bio-text p:last-child {
+      margin-bottom: 0;
+    }
+
+    .highlight {
+      font-weight: 600;
+      color: #7f4e2e;
+      background: linear-gradient(to right, transparent 0%, #f1e0ce 80%);
+      padding: 0 0.2rem;
+      border-radius: 4px;
+    }
+
+    .soft-spot {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-top: 1rem;
+      background: #fff6ed;
+      padding: 0.8rem 1.2rem;
+      border-radius: 3rem;
+      border-left: 5px solid #e4b68b;
+      font-size: 1.05rem;
+    }
+
+    .soft-spot .paw-icon {
+      font-size: 1.8rem;
+      line-height: 1;
+      filter: drop-shadow(0 2px 2px rgba(150, 100, 60, 0.2));
+    }
+
+    .soft-spot .cat-emoji {
+      font-size: 1.7rem;
+      margin-left: 0.2rem;
+    }
+
+    .hobbies-title {
+      display: flex;
+      align-items: center;
+      gap: 0.7rem;
+      font-size: 1.7rem;
+      font-weight: 500;
+      color: #4d3625;
+      margin-bottom: 1.3rem;
+      letter-spacing: -0.3px;
+    }
+
+    .hobbies-title span {
+      background: #e2cfbc;
+      height: 3px;
+      flex: 1;
+      border-radius: 3px;
+      margin-left: 0.2rem;
+    }
+
+    /* all hobbies on one horizontal line */
+    .hobby-row {
+      display: flex;
+      flex-wrap: nowrap;
+      justify-content: space-between;
+      align-items: stretch;
+      gap: 0.8rem;
+    }
+
+    .hobby-item {
+      flex: 1 1 0;
+      min-width: 0;
+      background: #fdf7f0;
+      border-radius: 2rem 0.8rem 2rem 0.8rem;
+      padding: 1.4rem 0.4rem 1.2rem 0.4rem;
+      text-align: center;
+      box-shadow: 0 6px 12px -6px rgba(110, 80, 50, 0.15),
+                  inset 0 0 0 1px #f3e6d8;
+      border: 1px solid #eedbc9;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 0.7rem;
+    }
+
+    .hobby-icon {
+      font-size: 3.2rem;
+      line-height: 1;
+      filter: drop-shadow(0 4px 4px rgba(120, 80, 40, 0.12));
+      display: block;
+    }
+
+    .hobby-label {
+      font-weight: 500;
+      font-size: 0.9rem;
+      color: #5f4633;
+      letter-spacing: 0.2px;
+      background: #f5e8dc;
+      padding: 0.3rem 0.7rem;
+      border-radius: 100px;
+      display: inline-block;
+      word-break: break-word;
+      line-height: 1.3;
+    }
+
+    @media (max-width: 700px) {
+      .hobby-row {
+        flex-wrap: wrap;
+      }
+      .hobby-item {
+        flex: 1 1 40%;
+      }
+      .hobby-icon {
+        font-size: 3rem;
+      }
+    }
+
+    @media (max-width: 550px) {
+      .bio-card {
+        padding: 1.8rem 1.2rem;
+        border-radius: 2rem 1.2rem 2rem 1.2rem;
+      }
+      h1 {
+        font-size: 2.2rem;
+        padding-left: 0.9rem;
+        border-left-width: 6px;
+      }
+      .subtitle {
+        padding-left: 1.5rem;
+        font-size: 1.1rem;
+      }
+      .bio-text {
+        padding: 1.2rem;
+        font-size: 1rem;
+      }
+      .hobby-icon {
+        font-size: 2.6rem;
+      }
+      .hobby-label {
+        font-size: 0.85rem;
+      }
+      .soft-spot {
+        flex-wrap: wrap;
+        font-size: 0.95rem;
+      }
+    }
+
+    @media (max-width: 400px) {
+      h1 {
+        font-size: 1.9rem;
+      }
+      .hobby-row {
+        gap: 0.6rem;
+      }
+      .hobby-icon {
+        font-size: 2.2rem;
+      }
+      .hobby-label {
+        font-size: 0.75rem;
+      }
+    }
+  </style>
 </head>
 <body>
+  <div class="bio-card">
+    <h1>Tsion Simachew</h1>
+    <div class="subtitle">biography</div>
 
-    <div class="card">
-
-        <!-- intro text: all the basic info -->
-        <div class="intro">
-            <p class="eyebrow">Personal Biography</p>
-            <h1 class="name">Tsion Simachew</h1>
-            <p>
-                <b>Grade 9</b> student, <span class="highlight-burgundy">born and raised in Bahirdar</span>, Ethiopia.
-                A curious mind with a soft spot for <b>cats 🐱</b> and a growing fascination with
-                <span class="highlight-blue">cyber security 🔐</span>.
-                Always creating, always wondering how things work.
-            </p>
-        </div>
-
-        <div class="divider"></div>
-
-        <!-- hobbies: icon grid -->
-        <section class="hobbies">
-            <h2>Hobbies</h2>
-            <div class="hobby-grid">
-
-                <div class="hobby">
-                    <div class="hobby-icon">🎨</div>
-                    <div class="hobby-label">Drawing</div>
-                </div>
-
-                <div class="hobby">
-                    <div class="hobby-icon">✂️</div>
-                    <div class="hobby-label">Crafts</div>
-                </div>
-
-                <div class="hobby">
-                    <div class="hobby-icon">🎬</div>
-                    <div class="hobby-label">Movies</div>
-                </div>
-
-                <div class="hobby">
-                    <div class="hobby-icon">📚</div>
-                    <div class="hobby-label">Thriller &amp; Fiction</div>
-                </div>
-
-            </div>
-        </section>
-
-        <footer>
-            crafted by Tsion · 2025
-        </footer>
-
+    <div class="bio-text">
+      <p>
+        <span class="highlight">Tsion Simachew</span> — born and raised in 
+        <strong>Bahir Dar</strong>. Currently learning at the 
+        <strong>STEM Incubation Center</strong> of Bahir Dar University.
+      </p>
+      <p>
+        Have interest in <strong>programming</strong>, <strong>cybersecurity</strong> and <strong>architecture</strong>.
+      </p>
     </div>
 
+    <div class="soft-spot">
+      <span class="paw-icon">🐾</span>
+      <span>soft spot for pets — <strong>especially cats</strong></span>
+      <span class="cat-emoji">🐈‍⬛</span>
+    </div>
+
+    <div style="margin-top: 2.3rem;">
+      <div class="hobbies-title">
+        ✦ hobbies <span></span>
+      </div>
+
+      <div class="hobby-row">
+        <div class="hobby-item">
+          <div class="hobby-icon">🎨</div>
+          <div class="hobby-label">drawing</div>
+        </div>
+        <div class="hobby-item">
+          <div class="hobby-icon">🧶</div>
+          <div class="hobby-label">doing crafts</div>
+        </div>
+        <div class="hobby-item">
+          <div class="hobby-icon">🎬</div>
+          <div class="hobby-label">watching movies</div>
+        </div>
+        <div class="hobby-item">
+          <div class="hobby-icon">📚</div>
+          <div class="hobby-label">reading thriller fiction</div>
+        </div>
+      </div>
+    </div>
+  </div>
 </body>
 </html>
+
